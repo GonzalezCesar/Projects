@@ -1,0 +1,5 @@
+import pyqrcode
+from pyqrcode import QRCode
+
+url = pyqrcode.create("https://www.instagram.com/p/CU6N3oJjTmh/")
+url.svg("portafolio.svg",scale=8)
