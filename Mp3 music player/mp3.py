@@ -8,7 +8,7 @@ import tkinter.ttk as ttk
 
 root = Tk()
 root.title('MusicPlayer')
-root.iconbitmap('C:/Users/MILAGROS/Desktop/Mp3 music player/descarga.ico')
+root.iconbitmap('C:/Users/MILAGROS/Desktop/fulfilled projects/Mp3 music player/descarga.ico')
 root.geometry("500x400")
 
 pygame.mixer.init()
@@ -25,7 +25,7 @@ def play_time():
     #current_song = song_box.curselection()
     
     song = song_box.get(ACTIVE)
-    song = f'C:/Users/MILAGROS/Desktop/Mp3 music player/audio/{song}.mp3'
+    song = f'C:/Users/MILAGROS/Desktop/fulfilled projects/Mp3 music player/audio/{song}.mp3'
     song_mut = MP3(song)
     global song_length
     song_length = song_mut.info.length
@@ -62,7 +62,7 @@ def play_time():
 def add_song():
     song = filedialog.askopenfilename(initialdir='audio/', title="Choose A Song", filetypes=(("mp3 Files", "*.mp3"), ))
     
-    song = song.replace("C:/Users/MILAGROS/Desktop/Mp3 music player/audio/", "")
+    song = song.replace("C:/Users/MILAGROS/Desktop/fulfilled projects/Mp3 music player/audio/", "")
     song = song.replace(".mp3", "")
     
     song_box.insert(END, song)
@@ -71,7 +71,7 @@ def add_many_songs():
     songs = filedialog.askopenfilenames(initialdir='audio/', title="Choose A Song", filetypes=(("mp3 Files", "*.mp3"), ))
 
     for song in songs:
-        song = song.replace("C:/Users/MILAGROS/Desktop/Mp3 music player/audio/", "")
+        song = song.replace("C:/Users/MILAGROS/Desktop/fulfilled projects/Mp3 music player/audio/", "")
         song = song.replace(".mp3", "")
         song_box.insert(END, song)
 
@@ -79,7 +79,7 @@ def play():
     global stopped
     stopped = False
     song = song_box.get(ACTIVE)
-    song = f'C:/Users/MILAGROS/Desktop/Mp3 music player/audio/{song}.mp3'
+    song = f'C:/Users/MILAGROS/Desktop/fulfilled projects/Mp3 music player/audio/{song}.mp3'
 
     pygame.mixer.music.load(song)
     pygame.mixer.music.play(loops=0)
